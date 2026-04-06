@@ -3,19 +3,18 @@ import java.util.*;
 public class TrainConsistManagementApp {
     public static void main(String[] args) {
 
-        // Create LinkedHashSet for train formation
-        Set<String> train = new LinkedHashSet<>();
+        // Create HashMap for bogie-capacity mapping
+        Map<String, Integer> bogieCapacity = new HashMap<>();
 
-        // Add bogies
-        train.add("Engine");
-        train.add("Sleeper");
-        train.add("Cargo");
-        train.add("Guard");
+        // Add bogies with capacity
+        bogieCapacity.put("Sleeper", 72);
+        bogieCapacity.put("AC Chair", 56);
+        bogieCapacity.put("First Class", 24);
 
-        // Attempt to add duplicate
-        train.add("Sleeper");
-
-        // Display final formation
-        System.out.println("Train Formation: " + train);
+        // Display bogie capacities
+        System.out.println("Bogie Capacity Details:");
+        for (Map.Entry<String, Integer> entry : bogieCapacity.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
     }
 }
