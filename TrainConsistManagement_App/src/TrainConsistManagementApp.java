@@ -3,25 +3,17 @@ import java.util.*;
 public class TrainConsistManagementApp {
     public static void main(String[] args) {
 
-        // Create ArrayList for passenger bogies
-        List<String> passengerBogies = new ArrayList<>();
+        // Create HashSet for bogie IDs
+        Set<String> bogieIds = new HashSet<>();
 
-        // Add bogies
-        passengerBogies.add("Sleeper");
-        passengerBogies.add("AC Chair");
-        passengerBogies.add("First Class");
+        // Add bogie IDs (including duplicates)
+        bogieIds.add("BG101");
+        bogieIds.add("BG102");
+        bogieIds.add("BG103");
+        bogieIds.add("BG101"); // duplicate
+        bogieIds.add("BG102"); // duplicate
 
-        // Display bogies after addition
-        System.out.println("After adding bogies: " + passengerBogies);
-
-        // Remove one bogie
-        passengerBogies.remove("AC Chair");
-
-        // Check if Sleeper exists
-        boolean exists = passengerBogies.contains("Sleeper");
-        System.out.println("Does Sleeper exist? " + exists);
-
-        // Display final list
-        System.out.println("Final bogie list: " + passengerBogies);
+        // Display unique bogie IDs
+        System.out.println("Unique Bogie IDs: " + bogieIds);
     }
 }
